@@ -6,6 +6,7 @@ import ButtonsDemo from '../components/ButtonDemo/ButtonsDemo';
 import DataGridDemo from '../components/DataGridDemo/DataGridDemo';
 import BasicBarChart from '../components/ChartDemo/BasicBarChart';
 import TabDemo from '../components/TabDemo/TabDemo';
+import { ColorChips } from '../components/ChipDemo/ChipDemo';
 
 interface HomePageProps {
   selectedComponent: string;
@@ -21,12 +22,14 @@ const HomePage: React.FC<HomePageProps> = ({ selectedComponent, drawerWidth }) =
         return <ComboBoxDemo />;
       case 'ButtonsDemo':
         return <ButtonsDemo />;
+      case 'Badges':
+        return <ColorChips />
       case 'DataGridDemo':
         return <DataGridDemo />;
       case 'TabDemo':
         return <TabDemo />;
       case 'BasicBarChart':
-        return <BasicBarChart />;
+        return <BasicBarChart />
       default:
         return <TextBoxDemo />;
     }
