@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, List, ListItem, ListItemText, Toolbar } from '@mui/material';
+import { Divider, List, ListItem, ListItemButton, ListItemText, Toolbar } from '@mui/material';
 
 interface DrawerMenuProps {
   selectedComponent: string;
@@ -16,8 +16,10 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ selectedComponent, setSelectedC
       <Divider />
       <List>
         {components.map((text) => (
-          <ListItem button key={text} selected={selectedComponent === text} onClick={() => setSelectedComponent(text)}>
-            <ListItemText primary={text} />
+          <ListItem disablePadding key={text} onClick={() => setSelectedComponent(text)}>
+            <ListItemButton selected={selectedComponent === text}>
+              <ListItemText primary={text} />
+            </ListItemButton>
           </ListItem>
         ))}
       </List>
