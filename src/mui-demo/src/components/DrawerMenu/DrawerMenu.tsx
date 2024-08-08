@@ -6,8 +6,9 @@ interface DrawerMenuProps {
   setSelectedComponent: (component: string) => void;
 }
 
+const components = ['TextBoxDemo', 'ComboBoxDemo', 'ButtonsDemo', 'DataGridDemo', 'TabDemo','BasicBarChart'];
+
 const DrawerMenu: React.FC<DrawerMenuProps> = ({ selectedComponent, setSelectedComponent }) => {
-  const components = ['TextBoxDemo', 'ComboBoxDemo', 'ButtonsDemo', 'DataGridDemo'];
 
   return (
     <>

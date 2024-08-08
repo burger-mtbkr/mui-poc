@@ -4,6 +4,8 @@ import TextBoxDemo from '../components/TextBoxDemo/TextBoxDemo';
 import ComboBoxDemo from '../components/ComboBoxDemo/ComboBoxDemo';
 import ButtonsDemo from '../components/ButtonDemo/ButtonsDemo';
 import DataGridDemo from '../components/DataGridDemo/DataGridDemo';
+import BasicBarChart from '../components/ChartDemo/BasicBarChart';
+import TabDemo from '../components/TabDemo/TabDemo';
 
 interface HomePageProps {
   selectedComponent: string;
@@ -21,6 +23,10 @@ const HomePage: React.FC<HomePageProps> = ({ selectedComponent, drawerWidth }) =
         return <ButtonsDemo />;
       case 'DataGridDemo':
         return <DataGridDemo />;
+      case 'TabDemo':
+        return <TabDemo />;
+      case 'BasicBarChart':
+        return <BasicBarChart />;
       default:
         return <TextBoxDemo />;
     }
