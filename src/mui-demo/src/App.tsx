@@ -3,15 +3,16 @@ import { Box, CssBaseline, Drawer, ThemeProvider } from '@mui/material';
 import lightTheme from './themes/lightTheme';
 import darkTheme from './themes/darkTheme';
 import greenTheme from './themes/greenTheme';
+import blueTheme from './themes/blueTheme';
 import DrawerMenu from './components/DrawerMenu/DrawerMenu';
 import Header from './components/Header/Header';
 import MainContent from './Pages/Home';
 import { SelectChangeEvent } from '@mui/material/Select';
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 
 const App: React.FC = () => {
-  const [appDrawerOpen, setAppDrawerOpen] = useState(false);
+  const [appDrawerOpen, setAppDrawerOpen] = useState(true);
   const [selectedComponent, setSelectedComponent] = useState('TextBoxDemo');
   const [currentTheme, setCurrentTheme] = useState('light');
 
@@ -25,6 +26,8 @@ const App: React.FC = () => {
 
   const getTheme = () => {
     switch (currentTheme) {
+      case 'blue':
+        return blueTheme;
       case 'dark':
         return darkTheme;
       case 'green':
@@ -46,18 +49,12 @@ const App: React.FC = () => {
             variant="persistent"
             open={appDrawerOpen}
             ModalProps={{ keepMounted: false }}
-          >
-            <DrawerMenu selectedComponent={selectedComponent} setSelectedComponent={setSelectedComponent} />
-          </Drawer>
-          <Drawer
-            variant="persistent"
-            open
             sx={{
-              display: { xs: 'none', sm: 'block' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+             display: { xs: 'none', sm: 'block' },
+             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
             }}
           >
-            <DrawerMenu selectedComponent={selectedComponent} setSelectedComponent={setSelectedComponent} />
+          <DrawerMenu selectedComponent={selectedComponent} setSelectedComponent={setSelectedComponent} />
           </Drawer>
         </Box>
         <MainContent selectedComponent={selectedComponent} drawerWidth={drawerWidth} />

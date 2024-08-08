@@ -10,7 +10,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ selectedComponent, setSelectedC
   const components = ['TextBoxDemo', 'ComboBoxDemo', 'ButtonsDemo', 'DataGridDemo'];
 
   return (
-    <div>
+    <>
       <Toolbar />
       <Divider />
       <List>
@@ -20,7 +20,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({ selectedComponent, setSelectedC
           </ListItem>
         ))}
       </List>
-    </div>
+    </>
   );
 };
 

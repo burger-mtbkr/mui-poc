@@ -28,6 +28,7 @@ const Header: React.FC<HeaderProps> = ({ handleDrawerToggle, handleThemeChange, 
             <MenuItem value="light">Light</MenuItem>
             <MenuItem value="dark">Dark</MenuItem>
             <MenuItem value="green">Green</MenuItem>
+            <MenuItem value="blue">Blue</MenuItem>
           </Select>
         </FormControl>
       </Toolbar>
