@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, CssBaseline, Drawer, ThemeProvider } from '@mui/material';
 import lightTheme from './themes/lightTheme';
 import darkTheme from './themes/darkTheme';
-import greenTheme from './themes/greenTheme';
+import { greenTheme } from './themes/greenTheme';
 import blueTheme from './themes/blueTheme';
 import DrawerMenu from './components/DrawerMenu/DrawerMenu';
 import Header from './components/Header/Header';
@@ -28,10 +28,10 @@ const App: React.FC = () => {
     switch (currentTheme) {
       case 'blue':
         return blueTheme;
+         case 'green':
+        return greenTheme;
       case 'dark':
         return darkTheme;
-      case 'green':
-        return greenTheme;
       case 'light':
       default:
         return lightTheme;

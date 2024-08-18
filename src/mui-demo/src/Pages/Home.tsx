@@ -7,6 +7,8 @@ import DataGridDemo from '../components/DataGridDemo/DataGridDemo';
 import BasicBarChart from '../components/ChartDemo/BasicBarChart';
 import TabDemo from '../components/TabDemo/TabDemo';
 import { ColorChips } from '../components/ChipDemo/ChipDemo';
+import BasicTable from '../components/Table/TableDemo';
+import BasicDatePicker from '../components/DatePicker/DatePicker';
 
 interface HomePageProps {
   selectedComponent: string;
@@ -16,6 +18,12 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ selectedComponent, drawerWidth }) => {
   const renderComponent = () => {
     switch (selectedComponent) {
+      case 'BasicTable':
+        return <BasicTable />;
+      case 'DataGridDemo':
+        return <DataGridDemo />;
+      case 'DatePicker':
+        return <BasicDatePicker />;
       case 'TextBoxDemo':
         return <TextBoxDemo />;
       case 'ComboBoxDemo':
@@ -24,14 +32,12 @@ const HomePage: React.FC<HomePageProps> = ({ selectedComponent, drawerWidth }) =
         return <ButtonsDemo />;
       case 'Badges':
         return <ColorChips />
-      case 'DataGridDemo':
-        return <DataGridDemo />;
       case 'TabDemo':
         return <TabDemo />;
       case 'BasicBarChart':
         return <BasicBarChart />
       default:
-        return <TextBoxDemo />;
+        return <BasicTable />;
     }
   };
 
